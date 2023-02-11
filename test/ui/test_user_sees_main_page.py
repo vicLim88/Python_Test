@@ -84,7 +84,7 @@ def test_user_wants_to_look_at_lesson_card_defichain(main_page: PageMain):
                                                    "EARN DFI",
                                                    "Earn $1 in DFI")
 
-    # When user attempts to look at lesson card DeFiChain
+    # When user attempts to browse lessons
     main_page.task_browse_through_lesson()
 
     # Then he should see that DeFiChain lesson card is available for learning
@@ -116,9 +116,7 @@ def test_user_wants_to_browse_all_lessons(main_page: PageMain):
                                                   "Earn $1 in ETH-DFI tokens")
 
     # When user attempts to browse lessons
-    main_page.action_hover_over_nav_button("Learn")
-    main_page.action_click_on_hovered_item("Learn and Earn")
-    main_page.action_click_on_button("Browse lessons")
+    main_page.task_browse_through_lesson()
 
     # Then he should see that DeFiChain, Bitcoin and Ethereum blockchains are available for learning.
     list_of_lesson_cards: list = main_page.get_list_of_lesson_cards()
@@ -142,7 +140,7 @@ def test_user_wants_to_browse_all_lessons(main_page: PageMain):
     lesson_Ethereum_actual: list = [lesson_card for lesson_card in list_of_lesson_card_obj if
                                     lesson_card.__getattribute__("Name") == "Ethereum"]
 
-    # Compare DeFiChain
+    # Compare All Lessons
     assert lesson_DeFiChain_expected == lesson_DeFiChain_actual[0]
     assert lesson_Bitcoin_expected == lesson_Bitcoin_actual[0]
     assert lesson_Ethereum_expected == lesson_Ethereum_actual[0]
