@@ -15,3 +15,5 @@ Command used to run selected test
 pytest -v -s -m sanity
 ```
 Only test 'test_main_page_user_sees_logo' will be executed as it is marked with '@pytest.mark.sanity'
+
+For the purpose of the demo, the test on user wanting to browse all lessons is set to fail intentionally. It will fail as there is a difference on the caps on button name.
