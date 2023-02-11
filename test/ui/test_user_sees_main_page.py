@@ -60,7 +60,6 @@ def main_page(py: Pylenium):
     =============================== Main Test ======================================
 '''
 
-
 @pytest.mark.sanity
 def test_main_page_user_sees_logo(main_page: PageMain):
     logo: Element = main_page.get_logo()
